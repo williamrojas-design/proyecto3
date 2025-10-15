@@ -42,17 +42,14 @@ let forwardBtn = document.querySelector(".btn-forward");
 let surpriseBtn = document.querySelector(".btn-surprise");
 
 document.addEventListener("DOMContentLoaded", (event) => {
-counter=0;
-showReview(counter);
-backBtn.addEventListener("click",backImg);
-forwardBtn.addEventListener("click",forwardImg);
-surpriseBtn.addEventListener("click",surprise);
-
+  counter = 0;
+  showReview(counter);
+  backBtn.addEventListener("click", backImg);
+  forwardBtn.addEventListener("click", forwardImg);
+  surpriseBtn.addEventListener("click", surprise);
 });
 
-
-
-function showReview (counter) {
+function showReview(counter) {
   currentItem = reviews[counter];
 
   nameElement.textContent = currentItem.name;
@@ -61,25 +58,23 @@ function showReview (counter) {
   textElement.textContent = currentItem.text;
 }
 
-function forwardImg(){
-  if (counter==reviews.length-1){
-    counter=0;
+function forwardImg() {
+  if (counter === reviews.length - 1) {
+    counter = 0;
   } else counter++;
-  
+
   showReview(counter);
 }
 
-function backImg(){
-  if (counter==0){
-    counter=reviews.length-1;
-  }else counter--;
-showReview(counter);
-
+function backImg() {
+  if (counter === 0) {
+    counter = reviews.length - 1;
+  } else counter--;
+  showReview(counter);
 }
 
-function surprise (){
+function surprise() {
   // utilizo reviews.length para que se adapte a cualquier longitud del array
-  let random =  Math.floor(Math.random() * reviews.length); 
+  let random = Math.floor(Math.random() * reviews.length);
   showReview(random);
-
 }
