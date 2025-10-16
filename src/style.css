@@ -68,6 +68,10 @@ h2 {
   box-shadow: 8px -5px #66b5db;
 }
 
+.name {
+  color: black;
+}
+
 .job {
   color: #66b5db;
   text-transform: uppercase;

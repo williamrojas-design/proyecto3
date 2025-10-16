@@ -74,7 +74,12 @@ function backImg() {
 }
 
 function surprise() {
-  // utilizo reviews.length para que se adapte a cualquier longitud del array
-  let random = Math.floor(Math.random() * reviews.length);
-  showReview(random);
+let newRandom;
+
+  do {
+    newRandom = Math.floor(Math.random() * reviews.length);
+  } while (newRandom === counter);
+
+  counter = newRandom;
+  showReview(counter);
 }
